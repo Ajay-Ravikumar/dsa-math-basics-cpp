@@ -1,4 +1,3 @@
-/*  */
 #include <stdio.h>
 #include <string.h>
 void reverseStr(char *s, int l, int r){
