@@ -1,20 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void subsets(vector<int>& arr, int i, vector<int>& curr) {
-    if (i == arr.size()) {
-        for (int x : curr) cout << x << " ";
-        cout << endl;
-        return;
-    }
-    curr.push_back(arr[i]);
-    subsets(arr, i+1, curr);
-    curr.pop_back();
-    subsets(arr, i+1, curr);
+void subsets(string &s, string cur, int i){
+if(i == s.size()){
+cout << cur << "\n";
+return;
+}
+subsets(s, cur, i+1);
+subsets(s, cur + s[i], i+1);
 }
 
-int main() {
-    vector<int> arr = {1,2,3};
-    vector<int> curr;
-    subsets(arr, 0, curr);
+int main(){
+string s; cin >> s;
+subsets(s, "", 0);
 }
